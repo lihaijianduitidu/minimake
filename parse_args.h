@@ -1,5 +1,5 @@
-#ifndef ARG_H
-#define ARG_H
+#ifndef PARSE_ARGS_H
+#define PARSE_ARGS_H
 
 void parse_arguments(int argc, char *argv[]);
 
