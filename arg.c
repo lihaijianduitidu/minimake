@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "parse_args.h"
+#include "arg.h"
 
 static void print_usage(const char *program_name) {
     fprintf(stderr, "用法: %s [--help]\n", program_name);

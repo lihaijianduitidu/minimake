@@ -1,4 +1,4 @@
-#include "parse_args.h"
+#include "arg.h"
 
 int main(int argc, char *argv[]) {
     parse_arguments(argc, argv);
