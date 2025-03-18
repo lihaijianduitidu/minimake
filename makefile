@@ -1,2 +1,12 @@
-app: main.c utils.c # ⽬标: app，依赖: main.c utils.c
- gcc -o app main.c utils.c # 编译命令 
+CC = gcc
+CFLAGS = -Wall
+TARGET = main
+SRCS = main.c arg.c
+
+all: $(TARGET)
+
+$(TARGET): $(SRCS)
+    $(CC) $(CFLAGS) -o $@ $^
+
+clean:
+    rm -f $(TARGET)
