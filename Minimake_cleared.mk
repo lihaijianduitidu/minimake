@@ -7,7 +7,7 @@ SRCS_MAIN1B = main1B.c preprocess.c
 OBJS_MAIN1A = $(SRCS_MAIN1A:.c=.o)
 OBJS_MAIN1B = $(SRCS_MAIN1B:.c=.o)
 HEADERS = arg.h preprocess.h
-all $(TARGET1) $(TARGET2)
+all: $(TARGET1) $(TARGET2)
 $(TARGET1): $(OBJS_MAIN1A)
 	$(CC) $(CFLAGS) -o $@ $^
 $(TARGET2): $(OBJS_MAIN1B)

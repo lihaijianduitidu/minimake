@@ -2,6 +2,6 @@
 #define CHECKER_H
 #include<stdbool.h>
 
-void check_line(const char *line, int line_number, bool *in_rule);
+void check_line(const char *processed_line, const char *trimmed_line, int line_number, bool *in_rule);
 
 #endif

@@ -1,3 +1,4 @@
+/* preprocess.c */
 #include "preprocess.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,7 +38,7 @@ static void process_line(char* line) {
     trim_trailing_spaces(line);
 }
 
-ProcessedLine* preprocess_makefile(const char* filename, bool verbose, int* line_count) {
+char** preprocess_makefile(const char* filename, bool verbose, int* line_count) {
     FILE* file = fopen(filename, "r");
     if (!file) {
         perror("Error opening file");
