@@ -37,7 +37,7 @@ static void process_line(char* line) {
     trim_trailing_spaces(line);
 }
 
-char** preprocess_makefile(const char* filename, bool verbose, int* line_count) {
+ProcessedLine* preprocess_makefile(const char* filename, bool verbose, int* line_count) {
     FILE* file = fopen(filename, "r");
     if (!file) {
         perror("Error opening file");

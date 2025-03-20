@@ -1,4 +1,5 @@
 #include "preprocess.h"
+#include"checker.h"
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
@@ -22,23 +23,37 @@ int main(int argc, char* argv[]) {
     }
 
     int line_count = 0;
-    char** processed = preprocess_makefile("Makefile", verbose, &line_count);
+    ProcessedLine* processed = preprocess_makefile("Makefile", verbose, &line_count);
 
     if (!processed) {
         return 1;
     }
 
     // 打印处理结果（调试用）
+    /*
     if (verbose) {
         printf("Cleaned Makefile:\n");
         for (int i = 0; i < line_count; i++) {
             printf("%s\n", processed[i]);
         }
     }
-
-    // 释放内存
+        */
+    // 语法检查核心逻辑
+    bool in_rule = false;
     for (int i = 0; i < line_count; i++) {
-        free(processed[i]);
+        const char* line_content = processed[i].content; // 处理后的内容
+        const int original_line_num = processed[i].original_line; // 原始行号
+
+    // 跳过空行
+        if (strlen(line_content) == 0) continue;
+
+    // 检查语法规则
+        check_line(line_content, original_line_num, &in_rule);
+    }
+
+    // 释放预处理结果内存
+    for (int i = 0; i < line_count; i++) {
+        free(processed[i].content);
     }
     free(processed);
 
