@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
             continue; // 跳过空行
         }
 
-        check_line(processed_line, trimmed_line, line_number, &in_rule);
+        check_line(processed_line, trimmed_line, line_number, &in_rule); //检查语法
     }
 
     free(line);

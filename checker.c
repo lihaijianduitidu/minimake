@@ -14,7 +14,8 @@ void check_line(const char *processed_line, const char *trimmed_line, int line_n
         // 检查目标是否有冒号
         if (strchr(trimmed_line, ':') != NULL) {
             *in_rule = true;
-        } else {
+        } 
+        else {
             printf("Line%d: Missing colon in target definition\n", line_number);
             *in_rule = false;
         }

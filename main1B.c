@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // 打印处理结果（调试用）
+    // 打印处理结果（供调试）
     if (verbose) {
         printf("Cleaned Makefile:\n");
         for (int i = 0; i < line_count; i++) {

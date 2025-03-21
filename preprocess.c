@@ -1,4 +1,3 @@
-/* preprocess.c */
 #include "preprocess.h"
 #include <stdio.h>
 #include <stdlib.h>
