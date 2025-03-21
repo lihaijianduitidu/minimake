@@ -1,4 +1,3 @@
-/* main.c */
 #include "preprocess.h"
 #include <stdio.h>
 #include <stdbool.h>
